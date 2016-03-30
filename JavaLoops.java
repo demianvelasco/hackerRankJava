@@ -81,7 +81,6 @@ public class Solution {
         double indexDouble = 0;
         for (int i = 0; i<n; i++) {
             indexDouble = (double) i;
-            temp = a;
             total = total + (int)(Math.pow(2.0,indexDouble)) * b;
             temp = total;
             temp += a;
