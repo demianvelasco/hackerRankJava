@@ -1,2 +1,2 @@
 # hackerRankJava
-# Demian Velasco
+My solutions for Hacker Rank Java Challenges
