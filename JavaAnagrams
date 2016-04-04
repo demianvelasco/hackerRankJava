@@ -1,0 +1,75 @@
+/* 
+
+Two strings AA and BB are called anagrams if they consist same characters, but may be in different orders. So the list of anagrams of CAT are "CAT", "ACT" , "TAC", "TCA" ,"ATC" and "CTA".
+
+Given two strings, print "Anagrams" if they are anagrams, print "Not Anagrams" if they are not. The strings may consist at most 50 english characters, the comparison should NOT be case sensitive.
+
+This exercise will verify that you are able to sort the characters of a string, or compare frequencies of characters.
+
+Sample Input 1
+
+anagram
+margana
+Sample Output 1:
+
+Anagrams
+Sample Input 2
+
+anagramm
+marganaa
+Sample Output 2:
+
+Not Anagrams
+
+*/
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+   static boolean isAnagram(String A, String B) {
+      //Complete the function
+       // Assume it is an anagram
+       boolean isAnagram = true;
+       // Convert strings to lowercase
+       A = A.toLowerCase();
+       B = B.toLowerCase();
+       // Convert Strings to char Arrays
+       char stringA[] = A.toCharArray();
+       char stringB[] = B.toCharArray();
+       // Sort the chars
+       Arrays.sort(stringA);
+       Arrays.sort(stringB);
+       // Store length of the arrays
+       int lengthA = stringA.length;
+       int lengthB = stringB.length;
+       // Are both lengths the same?
+       if (lengthA == lengthB) {
+           // Loop through the array
+           for (int i=0; i < lengthA; i++) {
+               // Check every char to make sure they are all the same
+               if (stringA[i] != stringB[i]) {
+                   isAnagram = false;
+               }
+               
+           }
+       }
+       else {
+           isAnagram = false;
+       }      
+       return isAnagram;
+       
+   }
+    public static void main(String[] args) {
+        
+        Scanner sc=new Scanner(System.in);
+        String A=sc.next();
+        String B=sc.next();
+        boolean ret=isAnagram(A,B);
+        if(ret)System.out.println("Anagrams");
+        else System.out.println("Not Anagrams");
+        
+    }
+}
